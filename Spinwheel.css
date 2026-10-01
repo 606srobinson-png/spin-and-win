@@ -1,0 +1,371 @@
+/* ==========================================================
+   DFW SMOKE & VAPOR SHOP - LUXURY DARK GOLD 3D THEME
+   ========================================================== */
+
+/* Import Bold Montserrat Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at center, #1e1b0b 0%, #090804 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Luxury 3D Card Container */
+.container {
+    background: linear-gradient(145deg, rgba(26, 23, 12, 0.95), rgba(12, 11, 6, 0.95));
+    backdrop-filter: blur(16px);
+    border: 2px solid #facc15;
+    border-radius: 26px;
+    padding: 32px 24px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 25px rgba(250, 204, 21, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Store Branding Header */
+.store-branding {
+    margin-bottom: 18px;
+}
+
+.store-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    color: #000000;
+    background: linear-gradient(135deg, #facc15, #ca8a04);
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 10px rgba(250, 204, 21, 0.4);
+}
+
+.store-name {
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #facc15;
+    text-shadow: 0 2px 8px rgba(250, 204, 21, 0.4);
+}
+
+h1 {
+    font-size: 34px;
+    font-weight: 900;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8);
+}
+
+p.subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #cbd5e1;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+}
+
+/* Wheel Wrapper & 3D Gold Rim */
+#wheel-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wheel-outer-ring {
+    position: relative;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1c190f, #0d0c07);
+    padding: 16px;
+    margin: 0 auto 22px auto;
+    border: 4px solid #facc15;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.95), 0 0 25px rgba(250, 204, 21, 0.4), inset 0 0 15px rgba(250, 204, 21, 0.2);
+}
+
+/* Animated LED Lights Container */
+.wheel-lights {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Individual LED Bulbs - Fixed Even Circular Placement */
+.light {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fef08a;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #facc15, 0 0 12px #ca8a04;
+    animation: flashLights 1.2s infinite alternate;
+}
+
+@keyframes flashLights {
+    0% {
+        background-color: #713f12;
+        box-shadow: 0 0 2px rgba(250, 204, 21, 0.2);
+    }
+    100% {
+        background-color: #fef08a;
+        box-shadow: 0 0 10px #facc15, 0 0 16px #fde047;
+    }
+}
+
+/* Perfect 30-degree circular layout for 12 lights */
+.light:nth-child(1)  { top: 4px;   left: 50%; transform: translateX(-50%); animation-delay: 0.1s; }
+.light:nth-child(2)  { top: 28px;  right: 92px;  animation-delay: 0.2s; }
+.light:nth-child(3)  { top: 92px;  right: 28px;  animation-delay: 0.3s; }
+.light:nth-child(4)  { top: 50%;   right: 4px;   transform: translateY(-50%); animation-delay: 0.4s; }
+.light:nth-child(5)  { bottom: 92px; right: 28px;  animation-delay: 0.5s; }
+.light:nth-child(6)  { bottom: 28px; right: 92px;  animation-delay: 0.6s; }
+.light:nth-child(7)  { bottom: 4px;  left: 50%; transform: translateX(-50%); animation-delay: 0.7s; }
+.light:nth-child(8)  { bottom: 28px; left: 92px;   animation-delay: 0.8s; }
+.light:nth-child(9)  { bottom: 92px; left: 28px;   animation-delay: 0.9s; }
+.light:nth-child(10) { top: 50%;   left: 4px;    transform: translateY(-50%); animation-delay: 1.0s; }
+.light:nth-child(11) { top: 92px;  left: 28px;   animation-delay: 1.1s; }
+.light:nth-child(12) { top: 28px;  left: 92px;   animation-delay: 1.2s; }
+
+.pointer {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 24px solid #facc15;
+    z-index: 30;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.9));
+}
+
+.wheel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.7);
+    border: 3px solid #ffffff;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.wheel-center-cap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #fde047 0%, #ca8a04 100%);
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.8), inset 0 2px 3px rgba(255,255,255,0.6);
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #000;
+    font-weight: 900;
+}
+
+/* Stunning 3D Gold Action Buttons */
+.btn, button, #spin-btn {
+    background: linear-gradient(135deg, #facc15 0%, #ca8a04 100%);
+    color: #090804;
+    border: none;
+    padding: 16px 28px;
+    font-size: 16px;
+    font-weight: 900;
+    border-radius: 14px;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0 8px 22px rgba(250, 204, 21, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.7);
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover, #spin-btn:hover {
+    background: linear-gradient(135deg, #fde047 0%, #eab308 100%);
+    box-shadow: 0 10px 28px rgba(250, 204, 21, 0.65), inset 0 2px 5px rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+}
+
+button:active, #spin-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 12px rgba(250, 204, 21, 0.4);
+}
+
+button:disabled {
+    background: #475569;
+    color: #94a3b8;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+#main-history-btn {
+    background: transparent;
+    border: 2px solid rgba(250, 204, 21, 0.5);
+    margin-top: 12px;
+    color: #facc15;
+    box-shadow: none;
+    font-weight: 800;
+}
+
+#main-history-btn:hover {
+    background: rgba(250, 204, 21, 0.12);
+    border-color: #facc15;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(250, 204, 21, 0.2);
+}
+
+/* Result Section Styles */
+.hidden {
+    display: none !important;
+}
+
+#result-section {
+    animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95) translateY(15px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+#result-section h2 {
+    font-size: 28px;
+    font-weight: 900;
+    color: #facc15;
+    text-shadow: 0 2px 10px rgba(250, 204, 21, 0.4);
+    letter-spacing: 1px;
+}
+
+#prize-display {
+    font-size: 42px;
+    font-weight: 900;
+    color: #4ade80;
+    margin: 15px 0;
+    text-shadow: 0 0 25px rgba(74, 222, 128, 0.6);
+    letter-spacing: 1px;
+}
+
+/* Timer Box */
+.timer-box {
+    background: rgba(20, 18, 9, 0.9);
+    border: 1px solid rgba(250, 204, 21, 0.4);
+    padding: 16px;
+    border-radius: 14px;
+    margin: 18px 0;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.8), 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.timer-box p {
+    font-size: 12px;
+    color: #cbd5e1;
+    margin-bottom: 6px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+#countdown {
+    font-size: 30px;
+    font-weight: 900;
+    color: #facc15;
+    letter-spacing: 2px;
+    text-shadow: 0 0 12px rgba(250, 204, 21, 0.5);
+}
+
+/* Verification Code */
+.security-code {
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: 900;
+    background: #090804;
+    color: #38bdf8;
+    padding: 14px;
+    border-radius: 12px;
+    letter-spacing: 2.5px;
+    margin: 18px 0;
+    border: 2px dashed rgba(56, 189, 248, 0.6);
+    box-shadow: inset 0 3px 8px rgba(0,0,0,0.9);
+}
+
+/* Warning & Tobacco Notice */
+.warning-box {
+    font-size: 12px;
+    font-weight: 700;
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin-top: 18px;
+    border-top: 1px solid rgba(250, 204, 21, 0.25);
+    padding-top: 15px;
+    text-align: left;
+}
+
+.tobacco-disclaimer {
+    font-size: 11px;
+    color: #f87171;
+    margin-top: 8px;
+    font-weight: 900;
+    letter-spacing: 0.3px;
+}
+
+/* History Panel Box */
+.history-box {
+    margin-top: 20px;
+    background: rgba(20, 18, 9, 0.95);
+    border: 1px solid rgba(250, 204, 21, 0.4);
+    padding: 18px;
+    border-radius: 14px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.8);
+}
+
+.history-box p {
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.history-time {
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.history-status {
+    margin-top: 8px;
+    font-weight: 900;
+}
